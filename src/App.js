@@ -45,6 +45,10 @@ import PromisApi from "./component/promisApi";
 import AsyncAwait from "./component/AsyncAwait";
 import SetTimeout from "./component/SetTimeout";
 import AsyncAwait1 from "./component/AsyncAwait1";
+import UseRefExample from "./Hooks/Useref";
+import MainHooks from "./Hooks/ManiHooks";
+import Debounce from "./Debounce";
+import Throttle from "./Throttle";
 export default function App() {
   const items = [
     "Item 1",
@@ -58,11 +62,13 @@ export default function App() {
       {/* <One/> */}
       {/* <Two/> */}
       {/* <Three/> */}
+      {/* <Debounce /> */}
+      {/* <Throttle /> */}
       {/* <Four/> */}
       {/* <Five/> */}
 
       {/* Api call */}
-      {/* <Six/>  */}
+      <Six />
 
       {/* <Seven/> */}
       {/* <Eight/> */}
@@ -93,7 +99,7 @@ export default function App() {
 
       {/* <TwentyOne/> */}
       {/* <TwentyTwo/> */}
-      
+
       {/* usereducer example */}
       {/* <TwentyThree/> */}
 
@@ -108,7 +114,7 @@ export default function App() {
       </LocalizationProvider> */}
 
       {/* axios example */}
-      {/* <TwentySeven/> */} 
+      {/* <TwentySeven/> */}
       {/* <TwentyEight/> */}
 
       {/* <TwentyNine/> */}
@@ -124,7 +130,9 @@ export default function App() {
       {/* <PromisApi/> */}
       {/* <AsyncAwait/> */}
       {/* <SetTimeout/> */}
-      <AsyncAwait1/>
+      {/* <AsyncAwait1/> */}
+      {/* <UseRefExample/> */}
+      {/* <MainHooks/> */}
     </div>
   );
 }

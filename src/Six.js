@@ -1,37 +1,81 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 export default function Six() {
   const [data, setData] = useState(null);
+  const hasFetchedGet = useRef(false);
 
+  // useEffect(() => {
+  //   fetch("https://jsonplaceholder.typicode.com/posts/1")
+  //   .then((response)=>{response.json()})
+  //   .then((data)=>setData(data))
+  // }, []);
+
+  // useEffect(() => {
+  //   fetch("https://dummyjson.com/posts/search?q=love")
+  //     .then((res) => res.json())
+  //     .then((data)=>setData(data.posts[0]));
+  // }, []);
+
+  
+
+  //get request
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts/1")
-    .then((response)=>response.json())
-    .then((data)=>setData(data))
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://dummyjson.com/todos");
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+  
+        const data = await response.json();
+        setData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+  
+    fetchData();
   }, []);
-  //   useEffect(()=> {
-  //     fetch('https://jsonplaceholder.typicode.com/posts/1')
-  //     .then((response) => {
-  //         console.log('Response:', response);
-  //         return response.json();
-  //     })
-  //     .then((json) => {
-  //         console.log('Parsed data:', json);
-  //         setData(json);
-  //     })
-  //     .catch((error) => {
-  //         console.error('Fetch error:', error);
-  //     })
-  // },[])
-  //   useEffect(() => {
-  //     const fetchData = async () => {
-  //         const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
-  //         console.log(response);
-  //         const resData = await response.json();
-  //         setData(resData);
-  //     };
 
-  //     fetchData();
-  // }, [])
+  //post request
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://dummyjson.com/posts/add", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            title: "I am in love with someone.",
+            userId: 5,
+          }),
+        });
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // use useRef to call only once on reload or refresh
+  useEffect(() => {
+    if (hasFetchedGet.current) return;
+    hasFetchedGet.current = true;
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://dummyjson.com/todos");
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+        const data = await response.json();
+        setData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <div>
       {data ? (

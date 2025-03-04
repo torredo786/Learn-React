@@ -11,7 +11,7 @@ export default function Five() {
   return (
     <div>
       <label>
-        <input type='checkbox' onChange={handleToggle}/>
+        <input type='checkbox' checked={isToggled} onChange={handleToggle} disabled={false}/>
       </label>
       <p>{isToggled ?" On ":" Off"}</p>
     </div>
