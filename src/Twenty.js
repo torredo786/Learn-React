@@ -7,7 +7,7 @@ export default function Twenty() {
 
   const addToCart = (item) => {
     const existingCartItem = cartState.cartItems.find((cartItem)=> cartItem.id === item.id);
-
+    debugger
     if(existingCartItem){
       cartDispatch({type:'UPDATE_QUANTITY',payload:{id:item.id,quantity:existingCartItem.quantity+1}})
     }

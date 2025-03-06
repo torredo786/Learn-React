@@ -2,12 +2,16 @@ import React, { useEffect, useState } from 'react'
 
 export default function Seven() {
 
-    const [time,setTime] = useState(60);
+    const [time,setTime] = useState(5);
 
     useEffect(()=>{
+      console.log("first")
      if(time>0){
         const timer = setTimeout(()=> setTime(time-1),1000);
-        return ()=> clearTimeout(timer);
+        return () => {
+          console.log("Clearing timeout for time:", time);
+          clearTimeout(timer);
+        };
      }
     },[time])
 

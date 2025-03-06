@@ -33,7 +33,6 @@ import { LocalizationProvider } from "./LocalizationContext";
 import TwentySeven from "./TwentySeven";
 import TwentyEight from "./TwentyEight";
 import TwentyNine from "./TwentyNine";
-import Thirty from "./Thirty";
 import ThirtyOne from "./ThirtyOne";
 import EventListenersExample from "./TodoApp/EventListenersExample";
 import CallbackHell from "./component/CallbackHell";
@@ -49,6 +48,9 @@ import UseRefExample from "./Hooks/Useref";
 import MainHooks from "./Hooks/ManiHooks";
 import Debounce from "./Debounce";
 import Throttle from "./Throttle";
+import AxiosCall from "./AxiosCall";
+import LazyLoading from "./LazyLoading";
+import Pagination from "./Pagination";
 export default function App() {
   const items = [
     "Item 1",
@@ -68,7 +70,8 @@ export default function App() {
       {/* <Five/> */}
 
       {/* Api call */}
-      <Six />
+      {/* <Six /> */}
+      {/* <AxiosCall /> */}
 
       {/* <Seven/> */}
       {/* <Eight/> */}
@@ -76,13 +79,21 @@ export default function App() {
 
       {/* routes */}
       {/* <Ten/>  */}
+      {/* <LazyLoading/> */}
 
       {/* <Eleven/> */}
       {/* <Twelve/> */}
+
+      {/* login */}
       {/* <Thirteen/> */}
+
       {/* <Fourteen/> */}
       {/* <Fifteen items={items}/> */}
+
+      {/* pagination */}
       {/* <Sixteen items={items} itemsPerPage={2}/> */}
+      {/* <Pagination /> */}
+
       {/* <Seventeen/> */}
       {/* <Eighteen/> */}
 
@@ -97,10 +108,9 @@ export default function App() {
         <Twenty />
       </CartProvider> */}
 
-      {/* <TwentyOne/> */}
-      {/* <TwentyTwo/> */}
-
       {/* usereducer example */}
+      {/* <TwentyOne /> */}
+      {/* <TwentyTwo/> */}
       {/* <TwentyThree/> */}
 
       {/* <AuthProvider>
@@ -110,26 +120,28 @@ export default function App() {
       {/* <TwentyFive/> */}
 
       {/* <LocalizationProvider>
-      <TwentySix/>
+        <TwentySix />
       </LocalizationProvider> */}
 
       {/* axios example */}
       {/* <TwentySeven/> */}
       {/* <TwentyEight/> */}
 
+      {/* image galary */}
       {/* <TwentyNine/> */}
-      {/* <Thirty/> */}
-      {/* <ThirtyOne/> */}
-      {/* <EventListenersExample /> */}
 
+      {/* <EventListenersExample /> */}
+      {/* <ThirtyOne/> */}
+
+      
+      {/* <SetTimeout/> */}
       {/* <CallbackHell /> */}
-      {/* <CreatePromise /> */}
       {/* <HandleCallbackHell /> */}
+      {/* <CreatePromise /> */}
       {/* <Promises /> */}
       {/* <PromiseChain /> */}
       {/* <PromisApi/> */}
       {/* <AsyncAwait/> */}
-      {/* <SetTimeout/> */}
       {/* <AsyncAwait1/> */}
       {/* <UseRefExample/> */}
       {/* <MainHooks/> */}

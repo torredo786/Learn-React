@@ -1,9 +1,9 @@
-import React from 'react'
-import { useTheme } from './ThemeContext'
+import React, {useContext} from 'react'
+import { ThemeContext } from './ThemeContext'
 
 export default function Nineteen() {
 
-    const {isDarkMode,toggleTheme} = useTheme();
+    const {isDarkMode,toggleTheme} = useContext(ThemeContext);
 
   return (
     <div>

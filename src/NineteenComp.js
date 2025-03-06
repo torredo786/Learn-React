@@ -1,9 +1,9 @@
-import React from 'react'
-import { useTheme } from './ThemeContext'
+import React, {useContext} from 'react'
+import { ThemeContext } from './ThemeContext'
 import './styles/Nineteen.css'
 
 export default function NineteenComp() {
-    const {isDarkMode} = useTheme();
+    const {isDarkMode} = useContext(ThemeContext);
     const themeClass = isDarkMode ? 'dark-theme' : 'light-theme';
 
   return (
