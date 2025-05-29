@@ -1,40 +1,39 @@
 import React, { useState } from "react";
 
-export default function Eight() {
+const Eight = () => {
   const [input, setInput] = useState("");
-  const [todos, setTodos] = useState([]);
-
-  const addTodo = () => {
-    if (input.trim() !== "") {
-      setTodos([...todos, input]);
-      setInput("");
-    }
-  };
-
-  const removeTodo = (index) => {
-    const updatedTodos = todos.filter((_, i) => i !== index);
-    setTodos(updatedTodos);
-  };
-
-  const handleSubmit = (e) => {
+  const [items, setItems] = useState([]);
+  const add = (e) => {
     e.preventDefault();
-    addTodo();
+    setItems((prev) => [...prev, input]);
+    setInput("");
   };
 
+  const handleRemove = (key) => {
+    setItems((prev) => prev.filter((_, index) => index !== key));
+  };
   return (
     <div>
-      <form action="" onSubmit={handleSubmit}>
-      <input type="text" onChange={(e) => setInput(e.target.value)} />
-      <button onClick={addTodo}>Add</button>
-      <ul>
-        {todos.map((todo, index) => (
-          <li key={index}>
-            {todo} <button onClick={() => removeTodo(index)}>Remove</button>
-          </li>
-        ))}
-      </ul>
+      <form action="" onSubmit={add}>
+        <input
+          type="text"
+          onChange={(e) => setInput(e.target.value)}
+          value={input}
+        />
+        <button onClick={add}>Add</button>
       </form>
-      
+      {console.log("<form action=", items)}
+
+      {items.map((item, key) => (
+        <div>
+          <ul style={{ display: "flex", gap: "10px" }}>
+            <li>{item}</li>
+            <button onClick={() => handleRemove(key)}>remove</button>
+          </ul>
+        </div>
+      ))}
     </div>
   );
-}
+};
+
+export default Eight;

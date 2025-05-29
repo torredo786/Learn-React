@@ -5,9 +5,12 @@ const Debounce = () => {
     const [debounceInput, setDebounceInput] = useState("");
   
     useEffect(()=>{
+      //It sets a timer (handler) to update debounceInput after 500 milliseconds.
       const handler=setTimeout(()=>{
         setDebounceInput(input);
-      },500)
+      },3000)
+
+      //cleanup function - It cancels the previous timer if the user types again within 500ms.
       return ()=>{
         clearTimeout(handler);
       }

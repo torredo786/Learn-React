@@ -51,6 +51,8 @@ import Throttle from "./Throttle";
 import AxiosCall from "./AxiosCall";
 import LazyLoading from "./LazyLoading";
 import Pagination from "./Pagination";
+import DarkMode from "./DarkMode";
+import SetInterval from "./interview/SetInterval";
 export default function App() {
   const items = [
     "Item 1",
@@ -61,20 +63,29 @@ export default function App() {
   ];
   return (
     <div>
-      {/* <One/> */}
-      {/* <Two/> */}
-      {/* <Three/> */}
-      {/* <Debounce /> */}
+      {/* <One/>  //hello world */}
+      {/* <Two/> //counter */}
+      {/* <Three/> // text input */}
+
+      {/* text input debounce- Debounce delays action until a pause happens and after pause it waits for define timeout then change. [ex- Search input, form validation] */}
+      {/* <Debounce />   */}
+
+      {/* text input throttle - Throttle limits the number of times a function can be called . [ex- Scroll, resize, mouse move] */}
       {/* <Throttle /> */}
-      {/* <Four/> */}
-      {/* <Five/> */}
+
+
+      {/* <Four/> //list */}
+      {/* <Five/>  //checkbox */}
 
       {/* Api call */}
-      {/* <Six /> */}
+      {/* <Six /> //fetch */}
       {/* <AxiosCall /> */}
 
-      {/* <Seven/> */}
-      {/* <Eight/> */}
+      {/* <Seven/>  //timer using settimeout */}
+      {/* <SetInterval /> */}
+
+
+      {/* <Eight/>  //todo */}
       {/* <Nine/> */}
 
       {/* routes */}
@@ -145,6 +156,7 @@ export default function App() {
       {/* <AsyncAwait1/> */}
       {/* <UseRefExample/> */}
       {/* <MainHooks/> */}
+      {/* <DarkMode /> */}
     </div>
   );
 }

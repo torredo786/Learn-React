@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+}
+
+.light-mode {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.mode-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: inherit;
+}
+
+/* Custom switch using div */
+.custom-switch {
+  width: 60px;
+  height: 34px;
+  background-color: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.custom-slider {
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50px;
+  transition: transform 0.4s;
+}
+
+.custom-switch.dark {
+  background-color: #4caf50;
+}
+
+.custom-switch.dark .custom-slider {
+  transform: translateX(26px);
+}
